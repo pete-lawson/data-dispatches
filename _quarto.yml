@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Data Dispatches"
+  title: "Data Dispatches - JHU Data Services"
   reader-mode: false
   page-navigation: true
   search:
@@ -31,19 +31,19 @@ website:
       title: "Data Tutorials"
       style: "floating"
       search: true
-      collapse-level: 1
+      collapse-level: 2
       contents:
         - index.qmd
-        - section: "Access and APIs"
-          contents:
-            - dispatches/data-access/index.qmd
-        - section: "Analysis"
-          contents:
-            - dispatches/data-analysis/index.qmd
-        - section: "Cleaning"
-          contents:
-            - dispatches/data-cleaning/index.qmd
-        - section: "Visualization"
+       # - section: "Access and APIs"
+       #   contents:
+       #     - dispatches/data-access/index.qmd
+       # - section: "Analysis"
+       #   contents:
+       #     - dispatches/data-analysis/index.qmd
+        # - section: "Cleaning"
+        #   contents:
+        #     - dispatches/data-cleaning/index.qmd
+        - section: "Data Visualization"
           contents:
             - dispatches/data-visualization/index.qmd
           

@@ -6,14 +6,17 @@ website:
   title: "Data Dispatches"
   reader-mode: false
   page-navigation: true
+  search:
+    location: sidebar
   
   navbar: 
     logo: logos/data-dispatches-white.png
     background: primary
-    search: false
-    left:
-    - text: "Dispatches"
-      href: dispatches/index.qmd
+    right: 
+    - icon: github
+      href: https://github.com/jhu-data-services
+    - icon: globe 
+      href: https://dataservices.library.jhu.edu/
     - text: "Help"
       menu:
         - text: "Report an Issue"
@@ -22,25 +25,15 @@ website:
         - text: "Get Help"
           icon: "chat-right-text"
           href: "https://v2.libanswers.com/chati.php?hash=8b19eda5bc7bc7b80e623cad56abdd12"
-    right: 
-    - icon: github
-      href: https://github.com/jhu-data-services
-    - icon: globe 
-      href: https://dataservices.library.jhu.edu/
         
   sidebar: 
-    - id: outreach 
-      title: "Data Tutorials"
-      style: "floating"
-      search: false
-      collapse-level: 1
     - id: dispatches
       title: "Data Tutorials"
       style: "floating"
-      search: false
+      search: true
       collapse-level: 1
       contents:
-        - dispatches/index.qmd
+        - index.qmd
         - section: "Access and APIs"
           contents:
             - dispatches/data-access/index.qmd

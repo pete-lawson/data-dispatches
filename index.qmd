@@ -1,8 +1,7 @@
 ---
-title: "Welcome to Data Dispatches"
-toc: false
+title: "Dispatches"
 ---
 
 > **What's a Dispatch?** ![](/logos/data-dispatches.png){width="100"}
 
-Dispatches are short tutorials on a number of data subjects.
+Dispatches are short tutorials on a number of data subjects. Use the navigation on the left to find tutorials of interest, or use the search function in the top of the sidebar.

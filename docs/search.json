@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "data-dispatches",
+    "title": "Welcome to Data Dispatches",
     "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Dispatches are short tutorials on a number of data subjects."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,54 @@
     "title": "About",
     "section": "",
     "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/data-access/index.html",
+    "href": "dispatches/data-access/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/data-analysis/index.html",
+    "href": "dispatches/data-analysis/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/data-cleaning/index.html",
+    "href": "dispatches/data-cleaning/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/data-visualization/index.html",
+    "href": "dispatches/data-visualization/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/index.html",
+    "href": "dispatches/index.html",
+    "title": "Dispatches",
+    "section": "",
+    "text": "Dispatches are short tutorials on a number of data subjects. Use the navigation on the left to find tutorials of interest, or use the search function in the top right."
+  },
+  {
+    "objectID": "dispatches/index.html#this-is-a-quarto-website.",
+    "href": "dispatches/index.html#this-is-a-quarto-website.",
+    "title": "Dispatches",
+    "section": "This is a Quarto website.",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
   }
 ]

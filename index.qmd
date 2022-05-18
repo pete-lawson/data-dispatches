@@ -1,11 +1,8 @@
 ---
-title: "data-dispatches"
+title: "Welcome to Data Dispatches"
+toc: false
 ---
 
-This is a Quarto website.
+> **What's a Dispatch?** ![](/logos/data-dispatches.png){width="100"}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Dispatches are short tutorials on a number of data subjects.

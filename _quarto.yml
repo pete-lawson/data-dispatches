@@ -1,22 +1,67 @@
 project:
   type: website
   output-dir: docs
-  
 
 website:
-  title: "data-dispatches"
-  navbar:
+  title: "Data Dispatches"
+  reader-mode: false
+  page-navigation: true
+  
+  navbar: 
+    logo: logos/data-dispatches-white.png
     background: primary
+    search: false
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
+    - text: "Dispatches"
+      href: dispatches/index.qmd
+    - text: "Help"
+      menu:
+        - text: "Report an Issue"
+          icon: "bug"
+          href: "https://github.com/jhu-data-services/data-dispatches/issues"
+        - text: "Get Help"
+          icon: "chat-right-text"
+          href: "https://v2.libanswers.com/chati.php?hash=8b19eda5bc7bc7b80e623cad56abdd12"
+    right: 
+    - icon: github
+      href: https://github.com/jhu-data-services
+    - icon: globe 
+      href: https://dataservices.library.jhu.edu/
+        
+  sidebar: 
+    - id: outreach 
+      title: "Data Tutorials"
+      style: "floating"
+      search: false
+      collapse-level: 1
+    - id: dispatches
+      title: "Data Tutorials"
+      style: "floating"
+      search: false
+      collapse-level: 1
+      contents:
+        - dispatches/index.qmd
+        - section: "Access and APIs"
+          contents:
+            - dispatches/data-access/index.qmd
+        - section: "Analysis"
+          contents:
+            - dispatches/data-analysis/index.qmd
+        - section: "Cleaning"
+          contents:
+            - dispatches/data-cleaning/index.qmd
+        - section: "Visualization"
+          contents:
+            - dispatches/data-visualization/index.qmd
+          
+  page-footer: 
+    background: primary
+    left: "Copyright 2022, JHU Data Services." 
+    right: "This site was built with [Quarto](https://quarto.org/)."
 format:
   html:
-    theme: cosmo
+    theme: litera 
     css: styles.css
     toc: true
 
 editor: visual
-

@@ -73,7 +73,7 @@ ggplot(data = penguins, aes(x = body_mass_g,
   geom_point() +
   xlab("Body Mass (g)") +
   ylab("Flipper Length (mm)") +
-  theme_gray()
+  theme_grey()
 ```
 ### Changing theme
 
@@ -107,10 +107,39 @@ There are a number of themes available in `ggplot2`:
 
 ## Customizing a theme
 
-Each of the previous theme changes different aesthetics of the theme. We can specify our own using a custom theme. For a list of parameters that we can change, check out the theme help with `?theme`:
+Each of the previous theme changes different aesthetics of the theme. We can specify our own using a custom theme. For a list of parameters that we can change, check out the theme help with `?theme` or review the documentation on `ggplot2` theming:
 
 ```{r}
 #| echo: false
 knitr::include_url("https://ggplot2.tidyverse.org/reference/theme.html")
 ```
 
+### Copying and modifying a theme
+
+Let's look at the `theme_minimal()` function, and see what arguments are defined for the different theme parameters:
+
+```{r}
+theme_minimal
+```
+
+Interesting! We can see that `theme_minimal()` just builds on and modifies `theme_bw()`.
+
+What would we find if we look at `theme_bw()`?
+
+```{r}
+theme_bw
+```
+
+`theme_bw()` builds on and modifies `theme_grey()`. Clearly a pattern is emerging where each `ggplot2` theme modifies and builds on another. 
+
+And what if we keep going down the rabbit hole and look at `theme_grey()`?
+
+```{r}
+theme_grey
+```
+
+We have reached the bottom of the rabbit hole with `theme_grey()`. This theme explicitly specifies all of the theme arguments (of which there are many). 
+
+![](./images/theme-nesting.svg)
+
+This explains why all of the other themes build on each other, it is much more concise to only use a theme where all the arguments are already defined, and only change those theme arguments that you want to look different than the theme you are building on. 

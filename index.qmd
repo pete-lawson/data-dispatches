@@ -1,7 +1,7 @@
 ---
+title: "Welcome"
 toc: false
 ---
-## Welcome
 
 Welcome to **Data Dispatches**, the online portal for [JHU Data Services](https://dataservices.library.jhu.edu/) data tutorials. Here you will find short tutorials, primarily in R and Python, on a number of data related topics including access, cleaning, analysis, and visualization.
 
@@ -15,4 +15,6 @@ Dispatches are short tutorials on a number of data subjects. Use the navigation 
 
 ### About Data Services
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r4VqNMw6Q8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r4VqNMw6Q8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>

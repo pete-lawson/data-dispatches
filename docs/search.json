@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Data Dispatches - JHU Data Services",
+    "title": "Welcome",
     "section": "",
-    "text": "Welcome to Data Dispatches, the online portal for JHU Data Services data tutorials. Here you will find short tutorials, primarily in R and Python, on a number of data related topics including access, cleaning, analysis, and visualization.\nTopics are organized into themes, with individual topics called dispatches.\n\nWhat’s a Dispatch? \n\nDispatches are short tutorials on a number of data subjects. Use the navigation on the left to find tutorials of interest, or use the search function in the top of the sidebar.\nNew dispatches are added frequently, so check back regularly for new tutorials!"
+    "text": "Topics are organized into themes, with individual topics called dispatches.\n\nWhat’s a Dispatch? \n\nDispatches are short tutorials on a number of data subjects. Use the navigation on the left to find tutorials of interest, or use the search function in the top of the sidebar.\nNew dispatches are added frequently, so check back regularly for new tutorials!\n\nAbout Data Services"
   },
   {
     "objectID": "about.html",
@@ -19,5 +19,61 @@
     "title": "Tutorials",
     "section": "",
     "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/data-visualization/distributions-ggplot2.html",
+    "href": "dispatches/data-visualization/distributions-ggplot2.html",
+    "title": "Distributions in R with ggplot2",
+    "section": "",
+    "text": "What is a distribution?\n\nA distribution is a collection of all of the observations for a given variable.\n\nSetup\nWe will be using the Palmer Penguins dataset for this dispatch. To install the Palmer Penguins package, run install.packages(\"palmerpenguins\").\nIf you have not already installed ggplot2, do so with install.packages(\"ggplot2\")\nNow load our two libraries:\n\nlibrary(palmerpenguins)\nlibrary(ggplot2)\n\n\n\nExplore the Data\nWe are using the palmerpenguins package for our data during this dispatch. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The data were conveniently collected as an R package that we use today.\n\n\ndata(package = 'palmerpenguins')\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           NA            NA                 NA          NA <NA> \n5 Adelie  Torge…           36.7          19.3              193        3450 fema…\n6 Adelie  Torge…           39.3          20.6              190        3650 male \n# … with 1 more variable: year <int>\n\n\n\n\nHistograms"
+  },
+  {
+    "objectID": "dispatches/data-visualization/distributions-ggplot2.html#visualizing-distributions-in-r-with-ggplot2",
+    "href": "dispatches/data-visualization/distributions-ggplot2.html#visualizing-distributions-in-r-with-ggplot2",
+    "title": "Data Dispatches - JHU Data Services",
+    "section": "Visualizing Distributions in R with ggplot2",
+    "text": "Visualizing Distributions in R with ggplot2\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dispatches/data-visualization/custom-ggplot2-theme.html",
+    "href": "dispatches/data-visualization/custom-ggplot2-theme.html",
+    "title": "Building a custom ggplot2 theme",
+    "section": "",
+    "text": "In this dispatch we will learn how to build your own custom theme in ggplot2. This is useful if you want your figures to use a consistent style.\nMaybe you frequently submit to a specific journal which has an explicit style guide, and you want to ensure your figures are consistent with that style guide.\nIt can be a lot of work, and a lot of code to get the aesthetics of your ggplot2 figure just right. Instead of changing the font type, size, coloring, etc. every time you create a plot, just create a theme, that can then be applied to every new figure you create!\nLet’s create a plot using the default style in ggplot2, and explore some of the default themes to get a better understanding of what a ggplot2 theme looks like, and how it’s structured."
+  },
+  {
+    "objectID": "dispatches/data-visualization/custom-ggplot2-theme.html#setup",
+    "href": "dispatches/data-visualization/custom-ggplot2-theme.html#setup",
+    "title": "Building a custom ggplot2 theme",
+    "section": "Setup",
+    "text": "Setup\nWe will be using the Palmer Penguins dataset for this dispatch. To install the Palmer Penguins package, run install.packages(\"palmerpenguins\").\nIf you have not already installed ggplot2, do so with install.packages(\"ggplot2\"), or install the entire tidyverse with install.packages(\"tidyverse\").\n\nLoad the Data\nNow load our two libraries:\n\nlibrary(palmerpenguins)\nlibrary(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──\n\n\n✔ ggplot2 3.3.6     ✔ purrr   0.3.4\n✔ tibble  3.1.7     ✔ dplyr   1.0.9\n✔ tidyr   1.2.0     ✔ stringr 1.4.0\n✔ readr   2.1.2     ✔ forcats 0.5.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n\n\n\n\nExplore the Data\nWe are using the palmerpenguins package for our data during this dispatch. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The data were conveniently collected as an R package that we use today.\n\nWe can get a sense of the contents of our data by looking at the first few rows of our tibble. Remember tibbles are data.frames, just with a few behavioral changes. The palmerpenguins data is in a tibble format by default.\n\ndata(package = 'palmerpenguins')\n\n# Remove rows that contain at least one missing value\npenguins <- penguins %>%\n            drop_na()\n\nprint(penguins)\n\n# A tibble: 333 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           36.7          19.3               193        3450\n 5 Adelie  Torgersen           39.3          20.6               190        3650\n 6 Adelie  Torgersen           38.9          17.8               181        3625\n 7 Adelie  Torgersen           39.2          19.6               195        4675\n 8 Adelie  Torgersen           41.1          17.6               182        3200\n 9 Adelie  Torgersen           38.6          21.2               191        3800\n10 Adelie  Torgersen           34.6          21.1               198        4400\n# … with 323 more rows, and 2 more variables: sex <fct>, year <int>"
+  },
+  {
+    "objectID": "dispatches/data-visualization/custom-ggplot2-theme.html#explore-the-data",
+    "href": "dispatches/data-visualization/custom-ggplot2-theme.html#explore-the-data",
+    "title": "Building a custom ggplot2 theme",
+    "section": "Explore the Data",
+    "text": "Explore the Data\nWe are using the palmerpenguins package for our data during this dispatch. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The data were conveniently collected as an R package that we use today.\n\n\ndata(package = 'palmerpenguins')\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  \n  <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>\n1 Adelie  Torge…           39.1          18.7              181        3750 male \n2 Adelie  Torge…           39.5          17.4              186        3800 fema…\n3 Adelie  Torge…           40.3          18                195        3250 fema…\n4 Adelie  Torge…           NA            NA                 NA          NA <NA> \n5 Adelie  Torge…           36.7          19.3              193        3450 fema…\n6 Adelie  Torge…           39.3          20.6              190        3650 male \n# … with 1 more variable: year <int>"
+  },
+  {
+    "objectID": "dispatches/data-visualization/custom-ggplot2-theme.html#load-the-data",
+    "href": "dispatches/data-visualization/custom-ggplot2-theme.html#load-the-data",
+    "title": "Building a custom ggplot2 theme",
+    "section": "Load the Data",
+    "text": "Load the Data\nNow load our two libraries:\n\nlibrary(palmerpenguins)\nlibrary(ggplot2)\n\n\nExplore the Data\nWe are using the palmerpenguins package for our data during this dispatch. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The data were conveniently collected as an R package that we use today.\n\nWe can get a sense of the contents of our data by looking at the first few rows of our tibble. Remember tibbles are data.frames, just with a few behavioral changes. The palmerpenguins data is in a tibble format by default.\n\ndata(package = 'palmerpenguins')\nprint(penguins)\n\n# A tibble: 344 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   <fct>   <fct>              <dbl>         <dbl>             <int>       <int>\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# … with 334 more rows, and 2 more variables: sex <fct>, year <int>"
+  },
+  {
+    "objectID": "dispatches/data-visualization/custom-ggplot2-theme.html#themes",
+    "href": "dispatches/data-visualization/custom-ggplot2-theme.html#themes",
+    "title": "Building a custom ggplot2 theme",
+    "section": "Themes",
+    "text": "Themes\nLet’s look at a few themes before we build our own. We can use these themes as a starting place.\n\nDefault theme\nThe default theme is theme_gray(). This is the theme that is used when you call ggplot without specifying a theme.\nWhen we compare penguin flipper length to penguin body mass by species the plot created uses theme_gray():\n\nggplot(data = penguins, aes(x = body_mass_g,\n                            y = flipper_length_mm,\n                            color = species)) +\n  geom_point() +\n  xlab(\"Body Mass (g)\") +\n  ylab(\"Flipper Length (mm)\")\n\n\n\n\nWe can explicitly add the theme and see that nothing changes:\n\nggplot(data = penguins, aes(x = body_mass_g,\n                            y = flipper_length_mm,\n                            color = species)) +\n  geom_point() +\n  xlab(\"Body Mass (g)\") +\n  ylab(\"Flipper Length (mm)\") +\n  theme_gray()\n\n\n\n\n\n\nChanging theme\nBut if we change the theme, we see our scatter plot change accordingly. Let’s use theme_minimal():\n\nggplot(data = penguins, aes(x = body_mass_g,\n                            y = flipper_length_mm,\n                            color = species)) +\n  geom_point() +\n  xlab(\"Body Mass (g)\") +\n  ylab(\"Flipper Length (mm)\") +\n  theme_minimal()\n\n\n\n\n\n\nAvailable themes\nThere are a number of themes available in ggplot2:\n\n\n\n\n\n\n\nTheme\nDescription\n\n\n\n\ntheme_gray()\nThe signature ggplot2 theme with a grey background and white gridlines, designed to put the data forward yet make comparisons easy.\n\n\ntheme_bw()\nThe classic dark-on-light ggplot2 theme. May work better for presentations displayed with a projector.\n\n\ntheme_linedraw()\nA theme with only black lines of various widths on white backgrounds, reminiscent of a line drawing. Serves a purpose similar to theme_bw(). Note that this theme has some very thin lines (<< 1 pt) which some journals may refuse.\n\n\ntheme_light()\nA theme similar to theme_linedraw() but with light grey lines and axes, to direct more attention towards the data.\n\n\ntheme_dark()\nThe dark cousin of theme_light(), with similar line sizes but a dark background. Useful to make thin coloured lines pop out.\n\n\ntheme_minimal()\nA minimalistic theme with no background annotations.\n\n\ntheme_classic()\nA classic-looking theme, with x and y axis lines and no gridlines.\n\n\ntheme_void()\nA completely empty theme.\n\n\ntheme_test()\nA theme for visual unit tests. It should ideally never change except for new features."
+  },
+  {
+    "objectID": "dispatches/data-visualization/custom-ggplot2-theme.html#customizing-a-theme",
+    "href": "dispatches/data-visualization/custom-ggplot2-theme.html#customizing-a-theme",
+    "title": "Building a custom ggplot2 theme",
+    "section": "Customizing a theme",
+    "text": "Customizing a theme\nEach of the previous theme changes different aesthetics of the theme. We can specify our own using a custom theme. For a list of parameters that we can change, check out the theme help with ?theme:"
   }
 ]

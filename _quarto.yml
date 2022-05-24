@@ -45,7 +45,7 @@ website:
         #     - dispatches/data-cleaning/index.qmd
         - section: "Data Visualization"
           contents:
-            - dispatches/data-visualization/index.qmd
+            - dispatches/data-visualization/custom-ggplot2-theme.qmd
           
   page-footer: 
     background: primary

@@ -1,0 +1,116 @@
+---
+title: "Building a custom `ggplot2` theme"
+---
+
+In this dispatch we will learn how to build your own custom theme in `ggplot2`. This is useful if you want your figures to use a consistent style. 
+
+Maybe you frequently submit to a specific journal which has an explicit style guide, and you want to ensure your figures are consistent with that style guide. 
+
+It can be a lot of work, and a lot of code to get the aesthetics of your `ggplot2` figure just right. Instead of changing the font type, size, coloring, etc. every time you create a plot, just create a theme, that can then be applied to every new figure you create! 
+
+> What is a theme?
+
+Let's create a plot using the default style in `ggplot2`, and explore some of the default themes to get a better understanding of what a `ggplot2` theme looks like, and how it's structured.
+
+## Setup
+
+We will be using the Palmer Penguins dataset for this dispatch. To install the Palmer Penguins package, run `install.packages("palmerpenguins")`.
+
+If you have not already installed `ggplot2`, do so with `install.packages("ggplot2")`, or install the entire tidyverse with `install.packages("tidyverse")`.
+
+###  Load the Data
+
+Now load our two libraries:
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+### Explore the Data
+
+We are using the `palmerpenguins` package for our data during this dispatch. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The data were conveniently collected as an R package that we use today.
+
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+
+We can get a sense of the contents of our data by looking at the first few rows of our `tibble`. Remember tibbles *are* data.frames, just with a few behavioral changes. The `palmerpenguins` data is in a `tibble` format by default.
+
+```{r}
+data(package = 'palmerpenguins')
+
+# Remove rows that contain at least one missing value
+penguins <- penguins %>%
+            drop_na()
+
+print(penguins)
+```
+
+## Themes
+
+Let's look at a few themes before we build our own. We can use these themes as a starting place.
+
+### Default theme
+
+The default theme is `theme_gray()`. This is the theme that is used when you call `ggplot` without specifying a theme.
+
+When we compare penguin flipper length to penguin body mass by species the plot created uses `theme_gray()`:
+
+```{r}
+ggplot(data = penguins, aes(x = body_mass_g,
+                            y = flipper_length_mm,
+                            color = species)) +
+  geom_point() +
+  xlab("Body Mass (g)") +
+  ylab("Flipper Length (mm)")
+```
+
+We can explicitly add the theme and see that nothing changes:
+
+```{r}
+ggplot(data = penguins, aes(x = body_mass_g,
+                            y = flipper_length_mm,
+                            color = species)) +
+  geom_point() +
+  xlab("Body Mass (g)") +
+  ylab("Flipper Length (mm)") +
+  theme_gray()
+```
+### Changing theme
+
+But if we change the theme, we see our scatter plot change accordingly. Let's use `theme_minimal()`:
+
+```{r}
+ggplot(data = penguins, aes(x = body_mass_g,
+                            y = flipper_length_mm,
+                            color = species)) +
+  geom_point() +
+  xlab("Body Mass (g)") +
+  ylab("Flipper Length (mm)") +
+  theme_minimal()
+```
+
+### Available themes
+
+There are a number of themes available in `ggplot2`:
+
+| Theme   | Description |
+|-------|-------------------------|
+| `theme_gray()`  | The signature ggplot2 theme with a grey background and white gridlines, designed to put the data forward yet make comparisons easy.|
+| `theme_bw()`        | The classic dark-on-light ggplot2 theme. May work better for presentations displayed with a projector.|
+| `theme_linedraw()`       | A theme with only black lines of various widths on white backgrounds, reminiscent of a line drawing. Serves a purpose similar to theme_bw(). Note that this theme has some very thin lines (<< 1 pt) which some journals may refuse.|
+| `theme_light()`       | A theme similar to theme_linedraw() but with light grey lines and axes, to direct more attention towards the data.|
+| `theme_dark()`       |The dark cousin of theme_light(), with similar line sizes but a dark background. Useful to make thin coloured lines pop out. |
+| `theme_minimal()`       | A minimalistic theme with no background annotations.|
+| `theme_classic()`       | A classic-looking theme, with x and y axis lines and no gridlines.|
+| `theme_void()`       |A completely empty theme. |
+| `theme_test()`       | A theme for visual unit tests. It should ideally never change except for new features.|
+
+## Customizing a theme
+
+Each of the previous theme changes different aesthetics of the theme. We can specify our own using a custom theme. For a list of parameters that we can change, check out the theme help with `?theme`:
+
+```{r}
+#| echo: false
+knitr::include_url("https://ggplot2.tidyverse.org/reference/theme.html")
+```
+

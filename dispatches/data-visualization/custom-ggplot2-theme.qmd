@@ -143,3 +143,26 @@ We have reached the bottom of the rabbit hole with `theme_grey()`. This theme ex
 ![](./images/theme-nesting.svg)
 
 This explains why all of the other themes build on each other, it is much more concise to only use a theme where all the arguments are already defined, and only change those theme arguments that you want to look different than the theme you are building on. 
+
+Let's begin to build a custom theme, and explore different arguments as we do. First lets create a new theme, `theme_custom()`, that is simply a wrapper to theme minimal:
+
+```{r}
+theme_custom <- function()
+{
+  theme_minimal()
+}
+```
+
+We can call our theme: 
+
+```{r}
+ggplot(data = penguins, aes(x = body_mass_g,
+                            y = flipper_length_mm,
+                            color = species)) +
+  geom_point() +
+  xlab("Body Mass (g)") +
+  ylab("Flipper Length (mm)") +
+  theme_custom()
+```
+
+And we see that we get the same output as when we use `theme_minimal()`.

@@ -227,6 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#customizing-a-theme" id="toc-customizing-a-theme" class="nav-link" data-scroll-target="#customizing-a-theme">Customizing a theme</a>
   <ul class="collapse">
+  <li><a href="#understanding-theme-contents" id="toc-understanding-theme-contents" class="nav-link" data-scroll-target="#understanding-theme-contents">Understanding theme contents</a></li>
   <li><a href="#copying-and-modifying-a-theme" id="toc-copying-and-modifying-a-theme" class="nav-link" data-scroll-target="#copying-and-modifying-a-theme">Copying and modifying a theme</a></li>
   </ul></li>
   </ul>
@@ -428,8 +429,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <iframe src="https://ggplot2.tidyverse.org/reference/theme.html" width="672" height="400px" data-external="1">
 </iframe>
 </div>
-<section id="copying-and-modifying-a-theme" class="level3">
-<h3 class="anchored" data-anchor-id="copying-and-modifying-a-theme">Copying and modifying a theme</h3>
+<section id="understanding-theme-contents" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-theme-contents">Understanding theme contents</h3>
 <p>Let’s look at the <code>theme_minimal()</code> function, and see what arguments are defined for the different theme parameters:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>theme_minimal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -444,7 +445,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             panel.border = element_blank(), strip.background = element_blank(), 
             plot.background = element_blank(), complete = TRUE)
 }
-&lt;bytecode: 0x000002464629ece0&gt;
+&lt;bytecode: 0x00000206a260e6a0&gt;
 &lt;environment: namespace:ggplot2&gt;</code></pre>
 </div>
 </div>
@@ -466,7 +467,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
                 colour = "grey20"), legend.key = element_rect(fill = "white", 
                 colour = NA), complete = TRUE)
 }
-&lt;bytecode: 0x000002464629d888&gt;
+&lt;bytecode: 0x00000206a2611168&gt;
 &lt;environment: namespace:ggplot2&gt;</code></pre>
 </div>
 </div>
@@ -533,13 +534,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             half_line, half_line, half_line), complete = TRUE)
     ggplot_global$theme_all_null %+replace% t
 }
-&lt;bytecode: 0x0000024641ea9410&gt;
+&lt;bytecode: 0x000002069e1d4ca0&gt;
 &lt;environment: namespace:ggplot2&gt;</code></pre>
 </div>
 </div>
 <p>We have reached the bottom of the rabbit hole with <code>theme_grey()</code>. This theme explicitly specifies all of the theme arguments (of which there are many).</p>
 <p><img src="./images/theme-nesting.svg" class="img-fluid"></p>
 <p>This explains why all of the other themes build on each other, it is much more concise to only use a theme where all the arguments are already defined, and only change those theme arguments that you want to look different than the theme you are building on.</p>
+</section>
+<section id="copying-and-modifying-a-theme" class="level3">
+<h3 class="anchored" data-anchor-id="copying-and-modifying-a-theme">Copying and modifying a theme</h3>
 <p>Let’s begin to build a custom theme, and explore different arguments as we do. First lets create a new theme, <code>theme_custom()</code>, that is simply a wrapper to theme minimal:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>theme_custom <span class="ot">&lt;-</span> <span class="cf">function</span>()</span>

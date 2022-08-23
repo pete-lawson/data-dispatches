@@ -10,7 +10,7 @@ Pandoc.
 
 To install `Quarto`, visit [Quarto Get
 Started](https://quarto.org/docs/get-started/) and select the Quarto
-command line interface (CLI) approrpiate to your operating system.
+command line interface (CLI) appropriate to your operating system.
 
 Ensure that you have the appropriate languages installed for the
 documents you would like to render. For example, if you are rendering

@@ -18,6 +18,7 @@ both `*.Rmd` and `*.ipynb` files, make sure you have `R` and `Python`
 installed.
 
 ## Usage
+
 Begin by cloning the Data Dispatches repository to a directory of your preference:
 
 `git clone git@github.com:jhu-data-services/data-dispatches.git`
@@ -29,6 +30,10 @@ To compile the project:
 `quarto render`
 
 The rendered website will be added to `/docs`. 
+
+## Configuration
+
+Configuration of the Data Dispatches website is accomplished by setting parameters within the `_quarto.yml` project file.
 
 ## Contributing
 

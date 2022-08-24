@@ -120,7 +120,7 @@ If you are adding content (`.Rmd`, `.ipynb`, `.qmd`) for a new topic (ex. Data C
             - dispatches/data-cleaning/example-data-cleaning-lesson.qmd
 ```
 
-##### Page Footer
+#### Page Footer
 
 Add information to the page footer. Positioning of footer information can be `left`, `center`, or `right`
 
@@ -131,7 +131,7 @@ Add information to the page footer. Positioning of footer information can be `le
     right: "This site was built with [Quarto](https://quarto.org/)."
 ```
 
-#### Format
+### Format
 
 The theme can be set in the `format` section, and any custom css can be added to `styles.css`.
 
@@ -143,7 +143,7 @@ format:
     toc: true
 ```
 
-#### Editor
+### Editor
 
 This is an RStudio specific setting that sets the default view for Quarto documents in RStudio. `editor: visual` will show the rendered `.qmd` pages by default.
 

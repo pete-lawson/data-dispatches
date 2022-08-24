@@ -62,6 +62,8 @@ website:
 
 #### Navbar
 
+The navbar controls the navigation bar at the top of the page. The position of the bar can be `left`, `middle`, or `right`. The icons use the [Font Awesome](https://fontawesome.com/) library of icons, so any FA icons should work.
+
 ``` yaml
   navbar: 
     logo: logos/data-dispatches-white.png
@@ -83,6 +85,8 @@ website:
 
 #### Sidebar
 
+The sidebar section is important, this is where you will add new content that you are adding to Data Dispatches.
+
 ``` yaml
   sidebar: 
     - id: dispatches
@@ -95,9 +99,30 @@ website:
         - section: "Data Visualization"
           contents:
             - dispatches/data-visualization/custom-ggplot2-theme.qmd
+
+```
+
+If you are adding content (`.Rmd`, `.ipynb`, `.qmd`) for a new topic (ex. Data Cleaning) you will need to:
+
+  * Create an appropriately named folder in the `dispatches` directory, for example: `mkdir ./dispatches/data-cleaning`
+  * Add a section to the contents of the sidebar section. For example,
+    to add an `example-data-cleaning-lesson.qmd` to the sidebar
+    contents above:
+
+``` yaml
+      contents:
+        - index.qmd
+        - section: "Data Visualization"
+          contents:
+            - dispatches/data-visualization/custom-ggplot2-theme.qmd
+        - section: "Data Cleaning"
+          contents:
+            - dispatches/data-cleaning/example-data-cleaning-lesson.qmd
 ```
 
 ##### Page Footer
+
+Add information to the page footer. Positioning of footer information can be `left`, `center`, or `right`
 
 ``` yaml
   page-footer: 
@@ -108,6 +133,8 @@ website:
 
 #### Format
 
+The theme can be set in the `format` section, and any custom css can be added to `styles.css`.
+
 ``` yaml
 format:
   html:
@@ -117,6 +144,8 @@ format:
 ```
 
 #### Editor
+
+This is an RStudio specific setting that sets the default view for Quarto documents in RStudio. `editor: visual` will show the rendered `.qmd` pages by default.
 
 ``` yaml
 editor: visual

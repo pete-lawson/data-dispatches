@@ -62,7 +62,7 @@ website:
 
 #### Navbar
 
-The navbar controls the navigation bar at the top of the page. The position of the bar can be `left`, `middle`, or `right`. The icons use the [Font Awesome](https://fontawesome.com/) library of icons, so any FA icons should work.
+The navbar controls the navigation bar at the top of the page. The position of the bar can be `left`, `center`, or `right`. The icons use the [Font Awesome](https://fontawesome.com/) library of icons, so any FA icons should work.
 
 ``` yaml
   navbar: 

@@ -1,0 +1,8 @@
+---
+title: "US Census API in R with `tidycensus`"
+---
+
+R conveniently has a number of packages designed to simplify access to the US Census API.
+
+For this dispatch, we will review `tidycensus`, an R package that allows you to interface with a subset of the US Census Bureau's APIs and return tidyverse-ready data frames. 
+

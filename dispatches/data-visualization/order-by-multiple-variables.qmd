@@ -1,0 +1,41 @@
+---
+title: "Ordering a `ggplot2` barplot by multiple variables"
+---
+
+Sometimes you would like to order your barplots by multiple variables. For example, you would like to sort by a categorical variable, and then within each categorical variable sort by a continuous variable. Let's take a look at an example:
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(forcats)
+
+```
+
+```{r}
+starwars %>% 
+  group_by(homeworld) %>% 
+  count() %>% 
+  arrange(-n)
+
+starwars %>% 
+  filter(is.na(homeworld))
+
+starwars <- starwars %>% 
+  mutate(homeworld = replace_na(homeworld, "Unknown")) %>%
+  filter(homeworld %in% c("Naboo", "Tatooine", "Unknown")) %>%
+  drop_na(height) %>% 
+  mutate(name = factor(name)) %>% 
+  mutate(name = fct_reorder(name, height)) %>% 
+  mutate(name = fct_reorder(name, homeworld))
+
+ggplot(starwars, mapping = aes(x = height, y = name, fill = homeworld)) +
+  geom_bar(stat = "identity") +
+  xlab("Character Height (in inches)") +
+  ylab("Character") +
+  scale_fill_manual(values = c("darkorange","purple","cyan4"),
+                    guide = guide_legend(reverse = TRUE),
+                    name = "Homeworld") +
+  theme_minimal() 
+
+```

@@ -1,0 +1,40 @@
+---
+title: "Visualizing Clusters"
+---
+
+```{r}
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+```
+
+## Visualizing clusters with a convex hull
+
+```{r}
+penguins %<>% filter_at(vars(bill_length_mm, body_mass_g), all_vars(!is.na(.)))
+
+penguin_hull <- penguins %>%
+  group_by(species) %>%
+  slice(chull(bill_length_mm, body_mass_g))
+
+ggplot(data = penguins,
+       aes(x = bill_length_mm,
+           y = body_mass_g,
+           color = species,
+           labels = species)) +
+  geom_point(size = 2) +
+  geom_polygon(
+    data = penguin_hull,
+    aes(x = bill_length_mm,
+        y = body_mass_g,
+        fill = species),
+    alpha = 0.5,
+    show.legend = FALSE
+  ) +
+  xlab("Bill Length (mm)") +
+  ylab("Body Mass (g)") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+
+```

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>JHU Data Services Data Dispatches - Introduction</title>
+<title>JHU Data Services Data Dispatches - US Census API in R with tidycensus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -60,20 +60,20 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./logos/jhu-shield.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../logos/jhu-shield.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">JHU Data Services <strong>Data Dispatches</strong></span>
     </a>
   </div>
@@ -103,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Report an Issue</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./dataservices@jhu.edu"><i class="bi bi-envelope" role="img">
+    <a class="dropdown-item" href="../../dataservices@jhu.edu"><i class="bi bi-envelope" role="img">
 </i> 
  <span class="dropdown-text">Contact Data Services</span></a>
   </li>  
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Introduction</h1>
+      <h1 class="quarto-secondary-nav-title">US Census API in R with <code>tidycensus</code></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -151,24 +151,24 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dispatches/data-visualization/custom-ggplot2-theme.html" class="sidebar-item-text sidebar-link">Building a custom <code>ggplot2</code> theme</a>
+  <a href="../../dispatches/data-visualization/custom-ggplot2-theme.html" class="sidebar-item-text sidebar-link">Building a custom <code>ggplot2</code> theme</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dispatches/data-visualization/order-by-multiple-variables.html" class="sidebar-item-text sidebar-link">Ordering a <code>ggplot2</code> barplot by multiple variables</a>
+  <a href="../../dispatches/data-visualization/order-by-multiple-variables.html" class="sidebar-item-text sidebar-link">Ordering a <code>ggplot2</code> barplot by multiple variables</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dispatches/data-visualization/visualizing-clusters.html" class="sidebar-item-text sidebar-link">Visualizing Clusters</a>
+  <a href="../../dispatches/data-visualization/visualizing-clusters.html" class="sidebar-item-text sidebar-link">Visualizing Clusters</a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./dispatches/data-access/api-guides.html" class="sidebar-item-text sidebar-link">API Guides</a>
+            <a href="../../dispatches/data-access/api-guides.html" class="sidebar-item-text sidebar-link">API Guides</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -176,12 +176,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dispatches/data-access/managing-secrets.html" class="sidebar-item-text sidebar-link">Managing Secrets</a>
+  <a href="../../dispatches/data-access/managing-secrets.html" class="sidebar-item-text sidebar-link">Managing Secrets</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dispatches/data-access/us-census-acs.html" class="sidebar-item-text sidebar-link">US Census API in R with <code>tidycensus</code></a>
+  <a href="../../dispatches/data-access/us-census-acs.html" class="sidebar-item-text sidebar-link active">US Census API in R with <code>tidycensus</code></a>
   </div>
 </li>
       </ul>
@@ -190,13 +190,15 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Introduction</h1>
+<h1 class="title d-none d-lg-block">US Census API in R with <code>tidycensus</code></h1>
 </div>
 
 
@@ -211,54 +213,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to <strong>Data Dispatches</strong>, the online portal for <a href="https://dataservices.library.jhu.edu/">JHU Data Services</a> data tutorials. Here you will find short tutorials, primarily in R and Python, on a number of data related topics including access, cleaning, analysis, and visualization.</p>
-<p>Topics are organized into themes, with individual topics called <strong>dispatches</strong>.</p>
-<section id="whats-a-dispatch" class="level3">
-<h3 class="anchored" data-anchor-id="whats-a-dispatch">What’s a Dispatch?</h3>
-<p>Dispatches are short tutorials on a number of data subjects. Use the navigation on the left to find tutorials of interest, or use the search function in the top of the sidebar.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>📊 Data Visualization</td>
-<td>Topics in Data Visualization, primarily in the R library <code>ggplot2</code></td>
-</tr>
-<tr class="even">
-<td>👩🏻‍💻 <a href="./dispatches/data-access/api-guides.html">API Guides</a></td>
-<td>API examples for common open data sources and JHU databases</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div class="callout-note callout callout-style-simple callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-New dispatches are added frequently, so check back regularly for new tutorials!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</section>
-<section id="about-data-services" class="level3">
-<h3 class="anchored" data-anchor-id="about-data-services">About Data Services</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r4VqNMw6Q8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
+<p>R conveniently has a number of packages designed to simplify access to the US Census API.</p>
+<p>For this dispatch, we will review <code>tidycensus</code>, an R package that allows you to interface with a subset of the US Census Bureau’s APIs and return tidyverse-ready data frames.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

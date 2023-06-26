@@ -1,5 +1,5 @@
 ---
-title: "Welcome"
+title: "Introduction"
 toc: false
 ---
 
@@ -7,11 +7,19 @@ Welcome to **Data Dispatches**, the online portal for [JHU Data Services](https:
 
 Topics are organized into themes, with individual topics called **dispatches**.
 
-> **What's a Dispatch?** ![](/logos/data-dispatches.png){width="100"}
+### What's a Dispatch?
 
 Dispatches are short tutorials on a number of data subjects. Use the navigation on the left to find tutorials of interest, or use the search function in the top of the sidebar.
 
-**New dispatches are added frequently, so check back regularly for new tutorials!**
+| Topic                                                    | Description                                                        |
+|--------------------|----------------------------------------------------|
+| 📊 Data Visualization                                    | Topics in Data Visualization, primarily in the R library `ggplot2` |
+| 👩🏻‍💻 [API Guides](./dispatches/data-access/api-guides.qmd) | API examples for common open data sources and JHU databases        |
+|                                                          |                                                                    |
+
+::: callout-note
+# New dispatches are added frequently, so check back regularly for new tutorials!
+:::
 
 ### About Data Services
 

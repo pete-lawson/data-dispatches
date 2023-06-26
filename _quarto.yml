@@ -3,38 +3,37 @@ project:
   output-dir: docs
 
 website:
-  title: "Data Dispatches - JHU Data Services"
+  title: "JHU Data Services **Data Dispatches**"
   reader-mode: false
-  page-navigation: true
+  page-navigation: false
   search:
     location: sidebar
   
   navbar: 
-    logo: logos/data-dispatches-white.png
+    logo: logos/jhu-shield.png
     background: primary
     right: 
     - icon: github
       href: https://github.com/jhu-data-services
-    - icon: globe 
+    - icon: globe2 
       href: https://dataservices.library.jhu.edu/
     - text: "Help"
       menu:
         - text: "Report an Issue"
           icon: "bug"
           href: "https://github.com/jhu-data-services/data-dispatches/issues"
-        - text: "Get Help"
-          icon: "chat-right-text"
-          href: "https://v2.libanswers.com/chati.php?hash=8b19eda5bc7bc7b80e623cad56abdd12"
-        
+        - text: "Contact Data Services"
+          icon: "envelope"
+          href: "dataservices@jhu.edu"
   sidebar: 
     - id: dispatches
       title: "Data Tutorials"
-      style: "floating"
+      style: "docked"
       search: true
       collapse-level: 2
       contents:
         - index.qmd
-       # - section: "Access and APIs"
+        - section: "Access and APIs"
        #   contents:
        #     - dispatches/data-access/index.qmd
        # - section: "Analysis"
@@ -46,15 +45,20 @@ website:
         - section: "Data Visualization"
           contents:
             - dispatches/data-visualization/custom-ggplot2-theme.qmd
-          
+            - dispatches/data-visualization/order-by-multiple-variables.qmd
+            - dispatches/data-visualization/visualizing-clusters.qmd
+        - section: dispatches/data-access/api-guides.qmd
+          contents:
+            - dispatches/data-access/managing-secrets.qmd
+            - dispatches/data-access/us-census-acs.qmd
   page-footer: 
     background: primary
-    left: "Copyright 2022, JHU Data Services." 
-    right: "This site was built with [Quarto](https://quarto.org/)."
+    left: "Copyright 2023, JHU Data Services." 
+    right: "This site was built with ❤️ and **[Quarto](https://quarto.org/)**."
 format:
   html:
-    theme: litera 
+    theme: custom.scss
     css: styles.css
     toc: true
-
-editor: visual
+editor: source
+callout-appearance: simple

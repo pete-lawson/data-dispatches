@@ -53,7 +53,7 @@ website:
             - dispatches/data-access/us-census-acs.qmd
   page-footer: 
     background: primary
-    left: "Copyright 2023, JHU Data Services." 
+    left: "Copyright 2024, JHU Data Services." 
     right: "This site was built with ❤️ and **[Quarto](https://quarto.org/)**."
 format:
   html:

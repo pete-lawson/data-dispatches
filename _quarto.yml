@@ -34,14 +34,8 @@ website:
       contents:
         - index.qmd
         - section: "Access and APIs"
-       #   contents:
-       #     - dispatches/data-access/index.qmd
-       # - section: "Analysis"
-       #   contents:
-       #     - dispatches/data-analysis/index.qmd
-        # - section: "Cleaning"
-        #   contents:
-        #     - dispatches/data-cleaning/index.qmd
+         contents:
+           - dispatches/data-access/managing-secrets.qmd
         - section: "Data Visualization"
           contents:
             - dispatches/data-visualization/custom-ggplot2-theme.qmd

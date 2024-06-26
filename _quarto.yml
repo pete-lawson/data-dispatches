@@ -33,15 +33,12 @@ website:
       collapse-level: 2
       contents:
         - index.qmd
-        - section: "Access and APIs"
-         contents:
-           - dispatches/data-access/managing-secrets.qmd
         - section: "Data Visualization"
           contents:
             - dispatches/data-visualization/custom-ggplot2-theme.qmd
             - dispatches/data-visualization/order-by-multiple-variables.qmd
             - dispatches/data-visualization/visualizing-clusters.qmd
-        - section: dispatches/data-access/api-guides.qmd
+        - section: "Access and APIs"
           contents:
             - dispatches/data-access/managing-secrets.qmd
             - dispatches/data-access/us-census-acs.qmd

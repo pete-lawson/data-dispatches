@@ -41,7 +41,7 @@ website:
         - section: "Access and APIs"
           contents:
             - dispatches/data-access/managing-secrets.qmd
-            - dispatches/data-access/us-census-acs.qmd
+            - dispatches/data-access/Introduction-to-APIs-in-R-Tutorial.qmd
   page-footer: 
     background: primary
     left: "Copyright 2024, JHU Data Services." 
